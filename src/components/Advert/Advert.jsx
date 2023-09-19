@@ -8,7 +8,7 @@ import {
   HeartIcon,
 } from './Advert.styled';
 import { FavoriteIcon } from 'components/FavoriteIcon/FavoriteIcon';
-export const Advert = ({ advert, onOffFavorite }) => {
+export const Advert = ({ advert, onOffFavorite, favorites }) => {
   const {
     id,
     img,
@@ -23,16 +23,24 @@ export const Advert = ({ advert, onOffFavorite }) => {
     // accessories,
     // functionalities,
   } = advert;
-  //const onClick = () => alert(id);
+  let favor = false;
+  if (favorites !== null) {
+    favor = favorites.split(',').includes(String(id));
+  }
 
-  // console.log(advert);
-  // console.log(adress);
   return (
     <AdvertDiv>
       <ImageDiv>
         <img src={img} width={274} height={268} alt={make} display="block" />
         <HeartIcon onClick={() => onOffFavorite(id)}>
-          <FavoriteIcon stroke={'var(--white-color)'} fill={'none'} />
+          {favor ? (
+            <FavoriteIcon
+              stroke={'var(--blue-color)'}
+              fill={'var(--blue-color)'}
+            />
+          ) : (
+            <FavoriteIcon stroke={'var(--white-color)'} fill={'none'} />
+          )}
         </HeartIcon>
       </ImageDiv>
 

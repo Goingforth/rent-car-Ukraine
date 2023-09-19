@@ -7,13 +7,11 @@ import {
   LoadMore,
   CatalogDiv,
 } from './CatalogScreen.styled';
-//import axios from 'axios';
-//import { SearchFilter } from '../../components/SearchFilter/SearchFilter';
-//import { MyComponent } from '../../operations/operations';
+
 export const CatalogScreen = () => {
   const [page, setPage] = useState(1);
   const [adverts, setAdverts] = useState([]);
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(localStorage.getItem('favorites'));
 
   useEffect(() => {
     const url = new URL('https://65083c5c56db83a34d9bf950.mockapi.io/adverts');
@@ -31,20 +29,6 @@ export const CatalogScreen = () => {
         console.log(error);
       });
   }, [page]);
-
-  // useEffect(() => {
-  //   if (localStorage.getItem('favorites').length !== 0) {
-  //     setFavorites(localStorage.getItem('favorites'));
-  //   }
-  //   // localStorage.setItem('favorites', favorites);
-  // }, []);
-
-  // if (localStorage.getItem('favorites').length !== 0) {
-  //   setFavorites(localStorage.getItem('favorites'));
-  // }
-  // useEffect(() => {
-  //   localStorage.setItem('favorites', favorites);
-  // }, [favorites]);
 
   const onOffFavorite = id => {
     let favor = localStorage.getItem('favorites');
@@ -65,6 +49,7 @@ export const CatalogScreen = () => {
     } else {
       localStorage.setItem('favorites', id);
     }
+    setFavorites(localStorage.getItem('favorites'));
   };
 
   return (
@@ -76,7 +61,11 @@ export const CatalogScreen = () => {
           <AdvertsUl>
             {adverts.map(advert => (
               <AdvertLi key={advert.id}>
-                <Advert advert={advert} onOffFavorite={onOffFavorite} />
+                <Advert
+                  advert={advert}
+                  onOffFavorite={onOffFavorite}
+                  favorites={favorites}
+                />
               </AdvertLi>
             ))}
           </AdvertsUl>
