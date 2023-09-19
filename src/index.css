@@ -1,5 +1,6 @@
+@import-normalize; /* bring in normalize.css styles */
 :root {
-  --white-color: #FFFFFF;
+  --white-color: #ffffff;
 }
 body {
   margin: 0;
@@ -25,7 +26,6 @@ code {
 html {
   -moz-tab-size: 4;
   tab-size: 4;
-
 }
 html {
   line-height: 1.15;
@@ -41,6 +41,9 @@ img {
 .link {
   text-decoration: none;
 }
+li {
+  list-style-type: none;
+}
 
 .list {
   list-style: none;
@@ -55,6 +58,11 @@ h4,
 h5,
 h6,
 p {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
   padding: 0;
   margin: 0;
 }
