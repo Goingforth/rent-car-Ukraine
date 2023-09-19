@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from 'components/App';
 import './index.css';
+import App from './components/App/App';
+import { BrowserRouter } from "react-router-dom";
+import reportWebVitals from './reportWebVitals';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  // <React.StrictMode>
+  <BrowserRouter basename="/rent-car-Ukraine">
     <App />
-  </React.StrictMode>
+  </BrowserRouter>
+
+  // </React.StrictMode>
 );
+reportWebVitals();
