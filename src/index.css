@@ -1,6 +1,8 @@
 @import-normalize; /* bring in normalize.css styles */
 :root {
   --white-color: #ffffff;
+  --blue-color: #3470ff;
+  --text-color--dark: #121417;
 }
 body {
   margin: 0;

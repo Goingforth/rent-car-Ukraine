@@ -1,15 +1,42 @@
-import styled from 'styled-components';
-import { AdvertDiv } from './Advert.styled';
+import {
+  AdvertDiv,
+  ImageDiv,
+  BasicData,
+  Model,
+  MoreData,
+  LearnMore,
+} from './Advert.styled';
 export const Advert = ({ advert }) => {
-  const { img } = advert;
-  console.log(typeof advert);
-  console.log(advert);
+  const {
+    img,
+    make,
+    model,
+    year,
+    rentalPrice,
+    // adress,
+    // rentalCompany,
+    // type,
+    // mileage,
+    // accessories,
+    // functionalities,
+  } = advert;
+
+  // console.log(advert);
+  // console.log(adress);
   return (
     <AdvertDiv>
-      <img src={img} width={274} height={268} alt="" display="block" />
+      <ImageDiv>
+        <img src={img} width={274} height={268} alt={make} display="block" />
+      </ImageDiv>
 
-      <div>Info</div>
-      <button type="button">learn more</button>
+      <BasicData>
+        <div>
+          {make} <Model>{model}</Model>,{year}
+        </div>
+        <div>{rentalPrice}</div>
+      </BasicData>
+      <MoreData>MORE DATA</MoreData>
+      <LearnMore>Learn more</LearnMore>
     </AdvertDiv>
   );
 };
