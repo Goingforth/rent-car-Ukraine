@@ -5,9 +5,12 @@ import {
   Model,
   MoreData,
   LearnMore,
+  HeartIcon,
 } from './Advert.styled';
-export const Advert = ({ advert }) => {
+import { FavoriteIcon } from 'components/FavoriteIcon/FavoriteIcon';
+export const Advert = ({ advert, onOffFavorite }) => {
   const {
+    id,
     img,
     make,
     model,
@@ -20,6 +23,7 @@ export const Advert = ({ advert }) => {
     // accessories,
     // functionalities,
   } = advert;
+  //const onClick = () => alert(id);
 
   // console.log(advert);
   // console.log(adress);
@@ -27,6 +31,9 @@ export const Advert = ({ advert }) => {
     <AdvertDiv>
       <ImageDiv>
         <img src={img} width={274} height={268} alt={make} display="block" />
+        <HeartIcon onClick={() => onOffFavorite(id)}>
+          <FavoriteIcon stroke={'var(--white-color)'} fill={'none'} />
+        </HeartIcon>
       </ImageDiv>
 
       <BasicData>

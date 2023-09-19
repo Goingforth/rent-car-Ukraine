@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 export const AdvertDiv = styled.div``;
 export const ImageDiv = styled.div`
+  position: relative;
   border-radius: 14px;
   overflow: hidden;
 
@@ -43,4 +44,10 @@ export const LearnMore = styled.button`
   border-radius: 12px;
   background-color: var(--blue-color);
   color: var(--white-color);
+`;
+
+export const HeartIcon = styled.div`
+  position: absolute;
+  top: 14px;
+  right: 14px;
 `;
