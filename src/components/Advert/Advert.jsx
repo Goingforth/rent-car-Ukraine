@@ -1,3 +1,7 @@
+import { useState } from 'react';
+import Modal from 'react-modal';
+import { ModalContent } from 'components/ModalContent/ModalContent';
+
 import {
   AdvertDiv,
   ImageDiv,
@@ -7,8 +11,20 @@ import {
   LearnMore,
   HeartIcon,
 } from './Advert.styled';
+import { customStyles } from 'components/ModalContent/CustomStyles';
 import { FavoriteIcon } from 'components/FavoriteIcon/FavoriteIcon';
+
 export const Advert = ({ advert, onOffFavorite, favorites }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   const {
     id,
     img,
@@ -51,7 +67,15 @@ export const Advert = ({ advert, onOffFavorite, favorites }) => {
         <div>{rentalPrice}</div>
       </BasicData>
       <MoreData>MORE DATA</MoreData>
-      <LearnMore>Learn more</LearnMore>
+      <LearnMore onClick={openModal}>Learn more</LearnMore>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <ModalContent closeModal={closeModal} advert={advert} />
+      </Modal>
     </AdvertDiv>
   );
 };

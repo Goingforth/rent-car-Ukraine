@@ -44,6 +44,10 @@ export const LearnMore = styled.button`
   border-radius: 12px;
   background-color: var(--blue-color);
   color: var(--white-color);
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const HeartIcon = styled.div`
