@@ -3,7 +3,6 @@ import {
   ImageDiv,
   BasicData,
   Model,
-  MoreData,
   DescriptionText,
   HeaderOptional,
   RentalLi,
@@ -11,6 +10,8 @@ import {
   RentalSpan,
   CloseDiv,
   RentalCar,
+  MoreData,
+  MoreDataItem,
 } from './ModalContant.styled';
 import { CloseModal } from 'components/icons/CloseModal';
 export const ModalContent = ({ closeModal, advert }) => {
@@ -23,7 +24,25 @@ export const ModalContent = ({ closeModal, advert }) => {
     rentalConditions,
     mileage,
     rentalPrice,
+    accessories,
+    functionalities,
+    address,
+    id,
+    type,
+    fuelConsumption,
+    engineSize,
   } = advert;
+
+  const info = address.split(',').splice(1, 2);
+  info.push(
+    `Id: ${id}`,
+    `Year: ${year}`,
+    `Type: ${type} `,
+    `FuelConsumption: ${fuelConsumption}`,
+    `EngineSize: ${engineSize}`
+  );
+
+  const infoAccesFunc = [...accessories, ...functionalities];
 
   return (
     <ModalDiv>
@@ -36,10 +55,19 @@ export const ModalContent = ({ closeModal, advert }) => {
       <BasicData>
         {make} <Model>{model}</Model>,{year}
       </BasicData>
-      <MoreData>MORE DATA</MoreData>
+      {/* ////////// */}
+      <MoreData>
+        {info.map(rental => (
+          <MoreDataItem key={rental}>{rental} |</MoreDataItem>
+        ))}
+      </MoreData>
       <DescriptionText>{description}</DescriptionText>
       <HeaderOptional>Accessories and functionalities:</HeaderOptional>
-      <MoreData>MORE DATA two</MoreData>
+      <MoreData>
+        {infoAccesFunc.map(rental => (
+          <MoreDataItem key={rental}>{rental} |</MoreDataItem>
+        ))}
+      </MoreData>
       <HeaderOptional>Rental Conditions:</HeaderOptional>
 
       <RentalUl>

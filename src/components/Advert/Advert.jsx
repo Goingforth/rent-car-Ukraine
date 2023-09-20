@@ -54,7 +54,6 @@ export const Advert = ({ advert, onOffFavorite, favorites }) => {
     mileage,
     functionalities[0]
   );
-  console.log(info);
 
   return (
     <AdvertDiv>
