@@ -1,9 +1,10 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize;
 :root {
   --white-color: #ffffff;
   --blue-color: #3470ff;
   --text-color--dark: #121417;
   --overlay-modal: rgba(18, 20, 23, 0.5);
+  --text-secondary--modal: #f9f9f9;
 }
 body {
   margin: 0;
@@ -18,8 +19,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/*----додано додатково----*/
 
 *,
 ::after,
@@ -36,7 +35,6 @@ html {
 }
 
 img {
-  /* width: 100%; */
   object-fit: cover;
   display: block;
 }
@@ -68,17 +66,4 @@ p {
 ul {
   padding: 0;
   margin: 0;
-}
-
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
 }

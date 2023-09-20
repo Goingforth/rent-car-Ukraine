@@ -73,6 +73,7 @@ export const Advert = ({ advert, onOffFavorite, favorites }) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
+        ariaHideApp={false}
       >
         <ModalContent closeModal={closeModal} advert={advert} />
       </Modal>
