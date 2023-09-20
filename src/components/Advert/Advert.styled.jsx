@@ -23,12 +23,21 @@ export const Model = styled.span`
   color: var(--blue-color);
 `;
 
-export const MoreData = styled.div`
+export const MoreData = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
   height: 40px;
-  border: 1px solid grey;
-  background-color: grey;
 
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgba(18, 20, 23, 0.5);
+
+  overflow: hidden;
   margin-bottom: 28px;
+`;
+export const MoreDataItem = styled.li`
+  margin-right: 8px;
 `;
 
 export const LearnMore = styled.button`

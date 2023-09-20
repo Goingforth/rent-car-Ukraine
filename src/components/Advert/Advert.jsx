@@ -10,6 +10,7 @@ import {
   MoreData,
   LearnMore,
   HeartIcon,
+  MoreDataItem,
 } from './Advert.styled';
 import { customStyles } from 'components/ModalContent/CustomStyles';
 import { FavoriteIcon } from 'components/FavoriteIcon/FavoriteIcon';
@@ -32,17 +33,28 @@ export const Advert = ({ advert, onOffFavorite, favorites }) => {
     model,
     year,
     rentalPrice,
-    // adress,
-    // rentalCompany,
-    // type,
-    // mileage,
-    // accessories,
-    // functionalities,
+    address,
+    rentalCompany,
+    type,
+    mileage,
+    accessories,
+    functionalities,
   } = advert;
   let favor = false;
   if (favorites !== null) {
     favor = favorites.split(',').includes(String(id));
   }
+
+  const info = address.split(',').splice(1, 2);
+  info.push(
+    rentalCompany,
+    type,
+    accessories[0],
+    make,
+    mileage,
+    functionalities[0]
+  );
+  console.log(info);
 
   return (
     <AdvertDiv>
@@ -66,7 +78,11 @@ export const Advert = ({ advert, onOffFavorite, favorites }) => {
         </div>
         <div>{rentalPrice}</div>
       </BasicData>
-      <MoreData>MORE DATA</MoreData>
+      <MoreData>
+        {info.map(rental => (
+          <MoreDataItem key={rental}>{rental} |</MoreDataItem>
+        ))}
+      </MoreData>
       <LearnMore onClick={openModal}>Learn more</LearnMore>
 
       <Modal
