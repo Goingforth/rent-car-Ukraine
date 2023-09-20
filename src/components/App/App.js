@@ -4,20 +4,20 @@ import { HomeScreen } from "../../screen/Home/HomeScreen";
 import { CatalogScreen } from "../../screen/Catalog/CatalogScreen";
 import { FavoritesScreen } from "../../screen/Favorites/FavoritesScreen";
 
-import { Container } from "./App.styled";
+import { Container, NavMenu } from "./App.styled";
 
 
 function App() {
   return (
     <Container>
 
-      <nav>
-        <NavLink to="/" end>
+      <NavMenu>
+        <NavLink style={{ textDecoration: 'none' }} to="/" end>
           Home
         </NavLink>
-        <NavLink to="/catalog">Catalog</NavLink>
-        <NavLink to="/favorites">Favorites</NavLink>
-      </nav>
+        <NavLink style={{ textDecoration: 'none' }} to="/catalog">Catalog</NavLink>
+        <NavLink style={{ textDecoration: 'none' }} to="/favorites">Favorites</NavLink>
+      </NavMenu>
 
       <Routes >
         <Route path="/" element={<HomeScreen />} />
