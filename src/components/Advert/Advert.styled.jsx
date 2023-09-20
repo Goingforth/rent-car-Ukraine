@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-export const AdvertDiv = styled.div``;
+
 export const ImageDiv = styled.div`
   position: relative;
   border-radius: 14px;
@@ -31,7 +31,7 @@ export const MoreData = styled.ul`
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
-  color: rgba(18, 20, 23, 0.5);
+  color: var(--overlay-modal);
 
   overflow: hidden;
   margin-bottom: 28px;

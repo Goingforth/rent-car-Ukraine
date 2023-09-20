@@ -3,7 +3,6 @@ import Modal from 'react-modal';
 import { ModalContent } from 'components/ModalContent/ModalContent';
 
 import {
-  AdvertDiv,
   ImageDiv,
   BasicData,
   Model,
@@ -56,7 +55,7 @@ export const Advert = ({ advert, onOffFavorite, favorites }) => {
   );
 
   return (
-    <AdvertDiv>
+    <div>
       <ImageDiv>
         <img src={img} width={274} height={268} alt={make} display="block" />
         <HeartIcon onClick={() => onOffFavorite(id)}>
@@ -92,6 +91,6 @@ export const Advert = ({ advert, onOffFavorite, favorites }) => {
       >
         <ModalContent closeModal={closeModal} advert={advert} />
       </Modal>
-    </AdvertDiv>
+    </div>
   );
 };

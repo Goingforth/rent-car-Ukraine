@@ -1,31 +1,56 @@
-//import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { ImageDiv, BasicData, Model } from 'components/Advert/Advert.styled';
+import { AdvertDiv, FavoritesUl } from './FavoritesScreen.styled';
 export const FavoritesScreen = () => {
-  //const [car, setCar] = useState();
-  //let cars = [];
-  // const allCars = res => (cars = [...res]);
-  const favorites = localStorage.getItem('favorites');
-  //   console.log(typeof favorites);
-  //   console.log(favorites.replace(/,/g, '&'));
+  const [cars, setCars] = useState([]);
 
-  //   useEffect(() => {
-  //     const url = new URL('https://65083c5c56db83a34d9bf950.mockapi.io/adverts');
-  //     url.searchParams.append('completed', false);
-  //     //  url.searchParams.append('page', page);
-  //     //  url.searchParams.append('limit', 8);
-  //     // console.log(url);
-  //     fetch(url, {
-  //       method: 'GET',
-  //       headers: { 'content-type': 'application/json' },
-  //     })
-  //       .then(res => res.json())
-  //       .then(res => allCars(res))
-  //       //   .then(res => setCar(res))
-  //       //.then(res => console.log(res))
-  //       .catch(error => {
-  //         console.log(error);
-  //       });
-  //   }, [allCars]);
-  //   console.log(favorites);
-  //   console.log(cars);
-  return <div>{favorites.replace(/,/g, '&')}</div>;
+  const favorites = localStorage.getItem('favorites');
+
+  useEffect(() => {
+    const url = new URL('https://65083c5c56db83a34d9bf950.mockapi.io/adverts');
+    url.searchParams.append('completed', false);
+    fetch(url, {
+      method: 'GET',
+      headers: { 'content-type': 'application/json' },
+    })
+      .then(res => res.json())
+      .then(res => setCars(res))
+
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
+
+  return (
+    <div>
+      <FavoritesUl>
+        {favorites !== null &&
+          cars.map(
+            car =>
+              favorites.includes(car.id) && (
+                <li key={car.id}>
+                  <AdvertDiv>
+                    <ImageDiv>
+                      <img
+                        src={car.img}
+                        width={274}
+                        height={268}
+                        alt={car.make}
+                        display="block"
+                      />
+                    </ImageDiv>
+
+                    <BasicData>
+                      <div>
+                        {car.make} <Model>{car.model}</Model>,{car.year}
+                      </div>
+                      <div>{car.rentalPrice}</div>
+                    </BasicData>
+                  </AdvertDiv>
+                </li>
+              )
+          )}
+      </FavoritesUl>
+    </div>
+  );
 };
