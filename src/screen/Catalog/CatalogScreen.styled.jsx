@@ -27,4 +27,6 @@ export const CatalogDiv = styled.div`
   flex-direction: column;
 `;
 
-export const AdvertLi = styled.li``;
+export const AdvertLi = styled.li`
+  width: 274px;
+`;
