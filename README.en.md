@@ -1,7 +1,5 @@
 ## RENT CAR UKRAINE
 
-!(/src/screen/Home/car.jpg)
-
 ---
 
 This project was written as a test assignment after completing the GOIT courses.
