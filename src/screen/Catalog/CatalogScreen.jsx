@@ -56,8 +56,6 @@ export const CatalogScreen = () => {
     <>
       {adverts.length !== 0 && (
         <CatalogDiv>
-          {/* <SearchFilter /> */}
-
           <AdvertsUl>
             {adverts.map(advert => (
               <AdvertLi key={advert.id}>

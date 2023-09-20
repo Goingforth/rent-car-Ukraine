@@ -5,6 +5,7 @@
   --text-color--dark: #121417;
   --overlay-modal: rgba(18, 20, 23, 0.5);
   --text-secondary--modal: #f9f9f9;
+  --beige-color: #f5f5dc;
 }
 body {
   margin: 0;
