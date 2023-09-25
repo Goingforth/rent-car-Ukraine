@@ -20,6 +20,9 @@ export const LoadMore = styled.button`
   text-decoration: underline;
   cursor: pointer;
   background-color: var(--white-color);
+  &&:hover {
+    color: var(--blue-color--hover);
+  }
 `;
 
 export const CatalogDiv = styled.div`

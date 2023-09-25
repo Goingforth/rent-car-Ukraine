@@ -2,6 +2,7 @@
 :root {
   --white-color: #ffffff;
   --blue-color: #3470ff;
+  --blue-color--hover: #0b44cd;
   --text-color--dark: #121417;
   --overlay-modal: rgba(18, 20, 23, 0.5);
   --text-secondary--modal: #f9f9f9;

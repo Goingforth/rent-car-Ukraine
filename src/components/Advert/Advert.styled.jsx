@@ -56,6 +56,7 @@ export const LearnMore = styled.button`
 
   &:hover {
     cursor: pointer;
+    background-color: var(--blue-color--hover);
   }
 `;
 

@@ -86,4 +86,8 @@ export const RentalCar = styled.a`
   font-weight: 600;
   line-height: 20px;
   color: var(--white-color);
+
+  &&:hover {
+    background-color: var(--blue-color--hover);
+  }
 `;
