@@ -12,7 +12,7 @@ import {
   MoreDataItem,
 } from './Advert.styled';
 import { customStyles } from 'components/ModalContent/CustomStyles';
-import { FavoriteIcon } from 'components/FavoriteIcon/FavoriteIcon';
+import { FavoriteIcon } from 'components/icons/FavoriteIcon/FavoriteIcon';
 
 export const Advert = ({ advert, onOffFavorite, favorites }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);

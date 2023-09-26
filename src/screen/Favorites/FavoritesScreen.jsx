@@ -20,11 +20,11 @@ export const FavoritesScreen = () => {
         console.log(error);
       });
   }, []);
-
+  console.log(favorites.length);
   return (
     <div>
       <FavoritesUl>
-        {favorites !== null &&
+        {favorites !== null && favorites.length > 0 ? (
           cars.map(
             car =>
               favorites.includes(car.id) && (
@@ -49,7 +49,10 @@ export const FavoritesScreen = () => {
                   </AdvertDiv>
                 </li>
               )
-          )}
+          )
+        ) : (
+          <h3>Sorry, but you haven't chosen a car yet.</h3>
+        )}
       </FavoritesUl>
     </div>
   );
