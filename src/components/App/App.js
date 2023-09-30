@@ -1,11 +1,11 @@
+import { Suspense, lazy } from "react";
 import { Routes, Route, NavLink, Navigate } from "react-router-dom";
-
-import { HomeScreen } from "../../screen/Home/HomeScreen";
-import { CatalogScreen } from "../../screen/Catalog/CatalogScreen";
-import { FavoritesScreen } from "../../screen/Favorites/FavoritesScreen";
 
 import { Container, NavMenu } from "./App.styled";
 
+const HomeScreen = lazy(() => import('../../screen/Home/HomeScreen'));
+const CatalogScreen = lazy(() => import('../../screen/Catalog/CatalogScreen'));
+const FavoritesScreen = lazy(() => import('../../screen/Favorites/FavoritesScreen'));
 
 function App() {
   return (
@@ -19,15 +19,14 @@ function App() {
         <NavLink style={{ textDecoration: 'none' }} to="/favorites">Favorites</NavLink>
       </NavMenu>
 
-      <Routes >
-        <Route path="/" element={<HomeScreen />} />
-        <Route path="/catalog" element={<CatalogScreen />} />
-        <Route path="/favorites" element={<FavoritesScreen />} />
-        <Route path="*" element={<Navigate to="/" />} />
-
-      </Routes>
-
-
+      <Suspense fallback={"Loading....."}>
+        <Routes >
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="catalog" element={<CatalogScreen />} />
+          <Route path="favorites" element={<FavoritesScreen />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Suspense>
     </Container>
   );
 }

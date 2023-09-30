@@ -1,7 +1,3 @@
-import { useState } from 'react';
-import Modal from 'react-modal';
-import { ModalContent } from 'components/ModalContent/ModalContent';
-
 import {
   ImageDiv,
   BasicData,
@@ -11,20 +7,10 @@ import {
   HeartIcon,
   MoreDataItem,
 } from './Advert.styled';
-import { customStyles } from 'components/ModalContent/CustomStyles';
+
 import { FavoriteIcon } from 'components/icons/FavoriteIcon/FavoriteIcon';
 
-export const Advert = ({ advert, onOffFavorite, favorites }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
+export const Advert = ({ advert, onOffFavorite, favorites, openModal }) => {
   const {
     id,
     img,
@@ -55,7 +41,7 @@ export const Advert = ({ advert, onOffFavorite, favorites }) => {
   );
 
   return (
-    <div>
+    <>
       <ImageDiv>
         <img src={img} width={274} height={268} alt={make} display="block" />
         <HeartIcon onClick={() => onOffFavorite(id)}>
@@ -81,16 +67,7 @@ export const Advert = ({ advert, onOffFavorite, favorites }) => {
           <MoreDataItem key={rental}>{rental} |</MoreDataItem>
         ))}
       </MoreData>
-      <LearnMore onClick={openModal}>Learn more</LearnMore>
-
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        ariaHideApp={false}
-      >
-        <ModalContent closeModal={closeModal} advert={advert} />
-      </Modal>
-    </div>
+      <LearnMore onClick={() => openModal(advert)}>Learn more</LearnMore>
+    </>
   );
 };

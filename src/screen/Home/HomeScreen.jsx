@@ -1,5 +1,5 @@
 import { HomeScreenDiv, HeaderSite, BlockInfo } from './HomeScreen.styled';
-export const HomeScreen = () => {
+const HomeScreen = () => {
   return (
     <HomeScreenDiv>
       <HeaderSite>RENT CAR UKRAINE</HeaderSite>
@@ -30,3 +30,4 @@ export const HomeScreen = () => {
     </HomeScreenDiv>
   );
 };
+export default HomeScreen;

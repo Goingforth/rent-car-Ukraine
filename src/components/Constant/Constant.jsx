@@ -1,0 +1,26 @@
+export const BASE_URL = 'https://65083c5c56db83a34d9bf950.mockapi.io/adverts';
+
+export const modelsCar = [
+  'Buick',
+  'Volvo',
+  'HUMMER',
+  'Subaru',
+  'Mitsubishi',
+  'Nissan',
+  'Lincoln',
+  'GMC',
+  'Hyundai',
+  'MINI',
+  'Bentley',
+  'Mercedes-Benz',
+  'Aston Martin',
+  'Pontiac',
+  'Lamborghini',
+  'Audi',
+  'BMW',
+  'Chevrolet',
+  'Mercedes-Benz',
+  'Chrysler',
+  'Kia',
+  'Land',
+];

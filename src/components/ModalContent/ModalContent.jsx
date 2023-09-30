@@ -14,7 +14,7 @@ import {
   MoreDataItem,
 } from './ModalContant.styled';
 import { CloseModal } from 'components/icons/CloseModal';
-export const ModalContent = ({ closeModal, advert }) => {
+export const ModalContent = ({ closeModal, dataModal }) => {
   const {
     img,
     make,
@@ -31,7 +31,7 @@ export const ModalContent = ({ closeModal, advert }) => {
     type,
     fuelConsumption,
     engineSize,
-  } = advert;
+  } = dataModal;
 
   const info = address.split(',').splice(1, 2);
   info.push(
@@ -55,7 +55,6 @@ export const ModalContent = ({ closeModal, advert }) => {
       <BasicData>
         {make} <Model>{model}</Model>,{year}
       </BasicData>
-      {/* ////////// */}
       <MoreData>
         {info.map(rental => (
           <MoreDataItem key={rental}>{rental} |</MoreDataItem>

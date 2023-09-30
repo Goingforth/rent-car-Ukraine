@@ -19,7 +19,7 @@ export const NavMenu = styled.nav`
   padding-top: 10px;
   padding-bottom: 10px;
 
-  margin-bottom: 140px;
+  margin-bottom: 100px;
 
   display: flex;
   z-index: 100;

@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
+import { BASE_URL } from 'components/Constant/Constant';
 import { ImageDiv, BasicData, Model } from 'components/Advert/Advert.styled';
 import { AdvertDiv, FavoritesUl } from './FavoritesScreen.styled';
-export const FavoritesScreen = () => {
+const FavoritesScreen = () => {
   const [cars, setCars] = useState([]);
 
   const favorites = localStorage.getItem('favorites');
 
   useEffect(() => {
-    const url = new URL('https://65083c5c56db83a34d9bf950.mockapi.io/adverts');
+    const url = new URL(BASE_URL);
     url.searchParams.append('completed', false);
     fetch(url, {
       method: 'GET',
@@ -20,7 +21,7 @@ export const FavoritesScreen = () => {
         console.log(error);
       });
   }, []);
-  console.log(favorites.length);
+
   return (
     <div>
       <FavoritesUl>
@@ -57,3 +58,4 @@ export const FavoritesScreen = () => {
     </div>
   );
 };
+export default FavoritesScreen;
