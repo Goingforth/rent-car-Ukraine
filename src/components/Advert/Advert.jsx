@@ -11,6 +11,8 @@ import {
 
 import { FavoriteIcon } from 'components/icons/FavoriteIcon/FavoriteIcon';
 
+import noPhoto from '../Constant/car.jpg';
+
 export const Advert = ({ advert, onOffFavorite, favorites, openModal }) => {
   const [isHover, setIsHover] = useState(false);
 
@@ -53,7 +55,14 @@ export const Advert = ({ advert, onOffFavorite, favorites, openModal }) => {
   return (
     <>
       <ImageDiv>
-        <img src={img} width={274} height={268} alt={make} display="block" />
+        <img
+          src={!img.onError ? img : noPhoto}
+          width={274}
+          height={268}
+          alt={make}
+          display="block"
+        />
+
         <HeartIcon
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
