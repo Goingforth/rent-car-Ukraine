@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 1440px;
   margin: auto;
-  /* padding: 150px 128px; */
   padding: 0 128px 150px 128px;
 
   display: flex;

@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Advert } from 'components/Advert/Advert';
 import { BASE_URL } from 'components/Constant/Constant';
-import { FilterCar } from 'components/FilterCar/FilterCar';
+import FiltersCar from 'components/FiltersCar/Filterscar';
 
 import Modal from 'react-modal';
 import { ModalContent } from 'components/ModalContent/ModalContent';
 import { customStyles } from 'components/ModalContent/CustomStyles';
+
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {
   AdvertsUl,
@@ -20,6 +23,8 @@ const CatalogScreen = () => {
   const [favorites, setFavorites] = useState(localStorage.getItem('favorites'));
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [dataModal, setDataModal] = useState();
+  const [onFiltered, setOnFiltered] = useState(false);
+  const [advertsFiltered, setAdvertsFiltered] = useState([]);
 
   const openModal = advert => {
     setModalIsOpen(true);
@@ -28,6 +33,14 @@ const CatalogScreen = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
+  };
+
+  const onOffFiltered = state => {
+    setOnFiltered(state);
+  };
+
+  const inAdvertsFiltered = data => {
+    setAdvertsFiltered(data);
   };
 
   useEffect(() => {
@@ -69,13 +82,19 @@ const CatalogScreen = () => {
     setFavorites(localStorage.getItem('favorites'));
   };
 
+  const carsMap = !onFiltered ? adverts : advertsFiltered;
+
   return (
     <>
       {adverts.length !== 0 && (
         <CatalogDiv>
-          <FilterCar />
+          <FiltersCar
+            adverts={adverts}
+            onOffFiltered={onOffFiltered}
+            inAdvertsFiltered={inAdvertsFiltered}
+          />
           <AdvertsUl>
-            {adverts.map(advert => (
+            {carsMap.map(advert => (
               <AdvertLi key={advert.id}>
                 <Advert
                   advert={advert}
@@ -86,6 +105,11 @@ const CatalogScreen = () => {
               </AdvertLi>
             ))}
           </AdvertsUl>
+          <div>
+            {advertsFiltered.length === 0 &&
+              onFiltered &&
+              toast.error('Sorry, no car. Change flter params')}
+          </div>
 
           <LoadMore type="button" onClick={() => setPage(page + 1)}>
             Load more
@@ -100,6 +124,7 @@ const CatalogScreen = () => {
           </Modal>
         </CatalogDiv>
       )}
+      <ToastContainer />;
     </>
   );
 };

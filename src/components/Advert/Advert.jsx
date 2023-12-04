@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   ImageDiv,
   BasicData,
@@ -11,6 +12,15 @@ import {
 import { FavoriteIcon } from 'components/icons/FavoriteIcon/FavoriteIcon';
 
 export const Advert = ({ advert, onOffFavorite, favorites, openModal }) => {
+  const [isHover, setIsHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  };
   const {
     id,
     img,
@@ -44,14 +54,21 @@ export const Advert = ({ advert, onOffFavorite, favorites, openModal }) => {
     <>
       <ImageDiv>
         <img src={img} width={274} height={268} alt={make} display="block" />
-        <HeartIcon onClick={() => onOffFavorite(id)}>
+        <HeartIcon
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => onOffFavorite(id)}
+        >
           {favor ? (
             <FavoriteIcon
-              stroke={'var(--blue-color)'}
+              stroke={isHover ? 'var(--white-color)' : 'var(--blue-color)'}
               fill={'var(--blue-color)'}
             />
           ) : (
-            <FavoriteIcon stroke={'var(--white-color)'} fill={'none'} />
+            <FavoriteIcon
+              stroke={isHover ? 'var(--blue-color)' : 'var(--white-color)'}
+              fill={'none'}
+            />
           )}
         </HeartIcon>
       </ImageDiv>

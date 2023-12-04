@@ -12,11 +12,11 @@ function App() {
     <Container>
 
       <NavMenu>
-        <NavLink style={{ textDecoration: 'none' }} to="/" end>
+        <NavLink className="link" to="/" end>
           Home
         </NavLink>
-        <NavLink style={{ textDecoration: 'none' }} to="/catalog">Catalog</NavLink>
-        <NavLink style={{ textDecoration: 'none' }} to="/favorites">Favorites</NavLink>
+        <NavLink className="link" to="/catalog">Catalog</NavLink>
+        <NavLink className="link" to="/favorites">Favorites</NavLink>
       </NavMenu>
 
       <Suspense fallback={"Loading....."}>
