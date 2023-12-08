@@ -11,10 +11,16 @@ import {
 
 import { FavoriteIcon } from 'components/icons/FavoriteIcon/FavoriteIcon';
 
-import noPhoto from '../Constant/car.jpg';
+//import noPhoto from '../Constant/car.jpg';
 
 export const Advert = ({ advert, onOffFavorite, favorites, openModal }) => {
   const [isHover, setIsHover] = useState(false);
+
+  const BrokenImage =
+    'https://i.postimg.cc/RZvT9tdr/guerrillabuzz-crypto-pr-Wtol-M5hsj14-unsplash.jpg';
+  const imageOnError = event => {
+    event.currentTarget.src = BrokenImage;
+  };
 
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -56,7 +62,8 @@ export const Advert = ({ advert, onOffFavorite, favorites, openModal }) => {
     <>
       <ImageDiv>
         <img
-          src={!img.onError ? img : noPhoto}
+          src={img}
+          onError={imageOnError}
           width={274}
           height={268}
           alt={make}
