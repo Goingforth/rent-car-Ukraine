@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/rent-car-Ukraine/static/css/main.ad000e50.css",
-    "main.js": "/rent-car-Ukraine/static/js/main.c59d47d8.js",
-    "static/js/526.9be6f06c.chunk.js": "/rent-car-Ukraine/static/js/526.9be6f06c.chunk.js",
-    "static/js/233.cc9868d6.chunk.js": "/rent-car-Ukraine/static/js/233.cc9868d6.chunk.js",
-    "static/js/202.00aa497c.chunk.js": "/rent-car-Ukraine/static/js/202.00aa497c.chunk.js",
-    "static/css/479.e62f93e7.chunk.css": "/rent-car-Ukraine/static/css/479.e62f93e7.chunk.css",
-    "static/js/479.c486879d.chunk.js": "/rent-car-Ukraine/static/js/479.c486879d.chunk.js",
-    "static/media/car.jpg": "/rent-car-Ukraine/static/media/car.b8e6e09904ed89642345.jpg",
-    "index.html": "/rent-car-Ukraine/index.html",
-    "static/media/chevron-up.svg": "/rent-car-Ukraine/static/media/chevron-up.6155ebb1460286357e7bbfff67169dca.svg",
-    "static/media/chevron-down.svg": "/rent-car-Ukraine/static/media/chevron-down.24cd320d509ea2ebbeb4265f8030bafb.svg",
-    "main.ad000e50.css.map": "/rent-car-Ukraine/static/css/main.ad000e50.css.map",
-    "main.c59d47d8.js.map": "/rent-car-Ukraine/static/js/main.c59d47d8.js.map",
-    "526.9be6f06c.chunk.js.map": "/rent-car-Ukraine/static/js/526.9be6f06c.chunk.js.map",
-    "233.cc9868d6.chunk.js.map": "/rent-car-Ukraine/static/js/233.cc9868d6.chunk.js.map",
-    "202.00aa497c.chunk.js.map": "/rent-car-Ukraine/static/js/202.00aa497c.chunk.js.map",
-    "479.e62f93e7.chunk.css.map": "/rent-car-Ukraine/static/css/479.e62f93e7.chunk.css.map",
-    "479.c486879d.chunk.js.map": "/rent-car-Ukraine/static/js/479.c486879d.chunk.js.map"
+    "main.css": "/static/css/main.ad000e50.css",
+    "main.js": "/static/js/main.49949877.js",
+    "static/js/526.49db4edf.chunk.js": "/static/js/526.49db4edf.chunk.js",
+    "static/js/233.0b985eb6.chunk.js": "/static/js/233.0b985eb6.chunk.js",
+    "static/js/202.1e2e3231.chunk.js": "/static/js/202.1e2e3231.chunk.js",
+    "static/css/479.e62f93e7.chunk.css": "/static/css/479.e62f93e7.chunk.css",
+    "static/js/479.3635c3c3.chunk.js": "/static/js/479.3635c3c3.chunk.js",
+    "static/media/car.jpg": "/static/media/car.b8e6e09904ed89642345.jpg",
+    "index.html": "/index.html",
+    "static/media/chevron-up.svg": "/static/media/chevron-up.6155ebb1460286357e7bbfff67169dca.svg",
+    "static/media/chevron-down.svg": "/static/media/chevron-down.24cd320d509ea2ebbeb4265f8030bafb.svg",
+    "main.ad000e50.css.map": "/static/css/main.ad000e50.css.map",
+    "main.49949877.js.map": "/static/js/main.49949877.js.map",
+    "526.49db4edf.chunk.js.map": "/static/js/526.49db4edf.chunk.js.map",
+    "233.0b985eb6.chunk.js.map": "/static/js/233.0b985eb6.chunk.js.map",
+    "202.1e2e3231.chunk.js.map": "/static/js/202.1e2e3231.chunk.js.map",
+    "479.e62f93e7.chunk.css.map": "/static/css/479.e62f93e7.chunk.css.map",
+    "479.3635c3c3.chunk.js.map": "/static/js/479.3635c3c3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ad000e50.css",
-    "static/js/main.c59d47d8.js"
+    "static/js/main.49949877.js"
   ]
 }
