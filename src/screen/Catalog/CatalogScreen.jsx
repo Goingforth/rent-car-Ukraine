@@ -124,7 +124,7 @@ const CatalogScreen = () => {
           </Modal>
         </CatalogDiv>
       )}
-      <ToastContainer />;
+      <ToastContainer />
     </>
   );
 };
