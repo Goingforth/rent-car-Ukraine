@@ -2,14 +2,18 @@ import { useState, useEffect } from 'react';
 import { BASE_URL } from 'components/Constant/Constant';
 import { ImageDiv, BasicData, Model } from 'components/Advert/Advert.styled';
 import { AdvertDiv, FavoritesUl } from './FavoritesScreen.styled';
+
+import BrokenImage from '../../components/Constant/no_image.jpg';
 const FavoritesScreen = () => {
   const [cars, setCars] = useState([]);
 
   const favorites = localStorage.getItem('favorites');
+  const imageOnError = event => {
+    event.currentTarget.src = BrokenImage;
+  };
 
   useEffect(() => {
     const url = new URL(BASE_URL);
-    url.searchParams.append('completed', false);
     fetch(url, {
       method: 'GET',
       headers: { 'content-type': 'application/json' },
@@ -34,6 +38,7 @@ const FavoritesScreen = () => {
                     <ImageDiv>
                       <img
                         src={car.img}
+                        onError={imageOnError}
                         width={274}
                         height={268}
                         alt={car.make}
