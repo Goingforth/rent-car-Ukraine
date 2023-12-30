@@ -53,9 +53,16 @@ const CatalogScreen = () => {
       headers: { 'content-type': 'application/json' },
     })
       .then(res => res.json())
+      .then(res => {
+        if (res.length === 0) {
+          throw new Error('Sorry,there are no more car offers...');
+        } else {
+          return res;
+        }
+      })
       .then(res => setAdverts(prevAdverts => [...prevAdverts, ...res]))
       .catch(error => {
-        console.log(error);
+        toast.error(`${error}`);
       });
   }, [page]);
 
